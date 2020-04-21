@@ -7,6 +7,12 @@ int main()
 {
 	setlocale(LC_ALL, "russian");
 
+	cout << "Введите N: ";
+	int n;
+	cin >> n;
+
+	int s = 0;
+
 	int matr[4][4];
 	for (int i = 0; i < 4; i++)
 	{
@@ -14,6 +20,10 @@ int main()
 		{
 			cout << "Matr[" << i << "][" << j << "] = ";
 			cin >> matr[i][j];
+			if (matr[i][j] == n)
+			{
+				s++;
+			}
 		}
 	}
 
@@ -27,24 +37,7 @@ int main()
 		cout << "\n";
 	}
 
-	cout << "Введите N: ";
-	int n;
-	cin >> n;
-
-	int count = 0;
-
-	for (int i = 0; i < 4; i++)
-	{
-		for (int j = 0; j < 4; j++)
-		{
-			if (matr[i][j] == n)
-			{
-				count++;
-			}
-		}
-	}
-
-	cout << "В матрице " << count << " элементов равных " << n << "\n";
+	cout << "В матрице " << s << " элементов равных " << n << "\n";
 
 	system("pause");
 
